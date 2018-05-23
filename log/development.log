@@ -881,3 +881,15 @@ Processing by PostsController#edit as HTML
   Parameters: {"id"=>"1"}
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 44ms (Views: 30.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/posts/1" for 73.22.29.59 at 2018-05-23 00:14:29 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d9kXxQy6b1gZQSNNgioV8cung5Somtabs6+cWrF01K9/mK7qgRlx+xX8w3DJfyYu6Z7nPfXoSUWX0bTRcUEqTQ==", "post"=>{"title"=>"changing", "description"=>"hope this works"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "changing"], ["description", "hope this works"], ["updated_at", "2018-05-23 00:14:29.682785"], ["id", 1]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://67.205.152.27:51287/posts/1
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms)
